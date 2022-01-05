@@ -197,6 +197,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bundler (~> 2.0.0.pre.3)
   byebug
   coffee-rails (= 4.1.0)
   guard-minitest (= 2.3.1)

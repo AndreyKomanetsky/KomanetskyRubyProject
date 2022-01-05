@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 ruby '3.0.0'
 
+gem 'bundler', '~> 2.0.0.pre.3'
 gem 'rails',        '4.2.2'
 gem 'sass-rails',   '5.0.2'
 gem 'uglifier',     '2.5.3'

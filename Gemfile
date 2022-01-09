@@ -9,6 +9,7 @@ gem 'coffee-rails'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder'
+gem 'puma', '~> 5.2'
 gem 'sdoc', group: :doc
 
 group :development, :test do

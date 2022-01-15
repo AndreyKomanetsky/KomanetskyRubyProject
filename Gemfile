@@ -4,6 +4,7 @@ ruby '3.0.0'
 
 gem 'rails'
 gem 'sass-rails'
+gem 'bootstrap-sass'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'jquery-rails'

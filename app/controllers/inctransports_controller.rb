@@ -18,7 +18,7 @@ class InctransportsController < ApplicationController
     
     if @transportin.save
       @transportin.update_attribute(:author, @operator)
-      @transportin.update_attribute(:permission, true)
+      @transportin.update_attribute(:permission, @permission)
       redirect_to action: "list"
     else
       render 'new'

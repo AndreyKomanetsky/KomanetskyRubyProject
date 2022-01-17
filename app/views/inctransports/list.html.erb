@@ -1,0 +1,25 @@
+<% provide(:title, 'Incoming Transport') %>
+<h1>Incoming Transport</h1>
+
+<%= link_to "Create new line",   inctransportcreate_path %>
+
+<table class="showlist">
+<tr>
+    <td>Mark</td>
+    <td>Gosznak</td>
+    <td>Date and Time</td>
+    <td>Permisson</td>
+    <td>Author</td>
+</tr>
+<% @transportinall.each do |transportinc| %>
+        
+    <tr>
+    <td><%=transportinc.mark%></td>
+    <td><%=transportinc.gozznak%></td>
+    <td><%= time_tag(transportinc.created_at) %></td>
+    <td><%=transportinc.permission%></td>
+    <td><%=transportinc.author%></td>
+    </tr>
+    
+  <% end %>
+</table>

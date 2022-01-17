@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'inctransports/new'
   get 'sessions/new'
   get 'users/new'
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,12 +12,13 @@ Rails.application.routes.draw do
   #   get 'products/:id' => 'catalog#view'
   get 'signup'  => 'users#new'
   get 'users' => 'users#list'
-  get 'tranport' => 'welcome#tranport'
+  get 'inctransportcreate' => 'inctransports#new'
+  get 'inctransportlist' => 'inctransports#list'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  resources :users
+  resources :users, :inctransports
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

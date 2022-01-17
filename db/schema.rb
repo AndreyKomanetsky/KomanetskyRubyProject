@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_17_180132) do
+ActiveRecord::Schema.define(version: 2022_01_17_182902) do
+
+  create_table "incpeople", force: :cascade do |t|
+    t.string "name"
+    t.string "passport"
+    t.boolean "permission"
+    t.string "author"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "inctransports", force: :cascade do |t|
     t.string "mark"
@@ -33,6 +42,22 @@ ActiveRecord::Schema.define(version: 2022_01_17_180132) do
   create_table "permtrans", force: :cascade do |t|
     t.string "mark"
     t.string "gozznak"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "personasincs", force: :cascade do |t|
+    t.string "name"
+    t.string "passport"
+    t.boolean "permission"
+    t.string "author"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "personperms", force: :cascade do |t|
+    t.string "name"
+    t.string "passport"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

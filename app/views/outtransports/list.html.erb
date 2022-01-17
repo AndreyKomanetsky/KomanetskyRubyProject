@@ -1,0 +1,31 @@
+<% provide(:title, 'Outcoming Transport') %>
+<h1>Outcoming Transport</h1>
+
+<%= link_to "Create new line",   outtransportcreate_path %>
+
+<table class="showlist">
+<tr>
+    <td>Mark</td>
+    <td>Gosznak</td>
+    <td>Date and Time</td>
+    <td>Permisson</td>
+    <td>Author</td>
+</tr>
+<% @transportoutall.each do |transportout| %>
+        
+    <tr>
+    <td><%=transportout.mark%></td>
+    <td><%=transportout.gozznak%></td>
+    <td><%= time_tag(transportout.created_at) %></td>
+    <td>
+    <% if transportout.permission? %>
+            <b>'Yes'</b>             
+         <% else %>
+            <b>'No'</b>
+            <% end%>
+    </td>
+    <td><%=transportout.author%></td>
+    </tr>
+    
+  <% end %>
+</table>

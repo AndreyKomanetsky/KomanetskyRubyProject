@@ -1,0 +1,31 @@
+<% provide(:title, 'Incoming cargo') %>
+<h1>Incoming cargo</h1>
+
+<%= link_to "Create new line",   inccargocreate_path %>
+
+<table class="showlist">
+<tr>
+    <td>Name</td>
+    <td>Number</td>
+    <td>Date and Time</td>
+    <td>Permisson</td>
+    <td>Author</td>
+</tr>
+<% @cargoincall.each do |cargoinc| %>
+        
+    <tr>
+    <td><%=cargoinc.name%></td>
+    <td><%=cargoinc.number%></td>
+    <td><%= time_tag(cargoinc.created_at) %></td>
+    <td>
+    <% if cargoinc.permission? %>
+            <b>'Yes'</b>             
+         <% else %>
+            <b>'No'</b>
+            <% end%>
+    </td>
+    <td><%=cargoinc.author%></td>
+    </tr>
+    
+  <% end %>
+</table>

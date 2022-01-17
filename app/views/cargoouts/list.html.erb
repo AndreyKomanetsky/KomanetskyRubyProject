@@ -1,0 +1,31 @@
+<% provide(:title, 'Outoming cargo') %>
+<h1>Outoming cargo</h1>
+
+<%= link_to "Create new line",   outcargocreate_path %>
+
+<table class="showlist">
+<tr>
+    <td>Name</td>
+    <td>Number</td>
+    <td>Date and Time</td>
+    <td>Permisson</td>
+    <td>Author</td>
+</tr>
+<% @cargooutcall.each do |cargoout| %>
+        
+    <tr>
+    <td><%=cargoout.name%></td>
+    <td><%=cargoout.number%></td>
+    <td><%= time_tag(cargoout.created_at) %></td>
+    <td>
+    <% if cargoout.permission? %>
+            <b>'Yes'</b>             
+         <% else %>
+            <b>'No'</b>
+            <% end%>
+    </td>
+    <td><%=cargoout.author%></td>
+    </tr>
+    
+  <% end %>
+</table>

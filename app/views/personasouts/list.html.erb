@@ -1,0 +1,31 @@
+<% provide(:title, 'Outoming Person') %>
+<h1>Outcoming Person</h1>
+
+<%= link_to "Create new line",   outpersoncreate_path %>
+
+<table class="showlist">
+<tr>
+    <td>Name</td>
+    <td>Passport</td>
+    <td>Date and Time</td>
+    <td>Permisson</td>
+    <td>Author</td>
+</tr>
+<% @personoutall.each do |personout| %>
+        
+    <tr>
+    <td><%=personout.name%></td>
+    <td><%=personout.passport%></td>
+    <td><%= time_tag(personout.created_at) %></td>
+    <td>
+    <% if personout.permission? %>
+            <b>'Yes'</b>             
+         <% else %>
+            <b>'No'</b>
+            <% end%>
+    </td>
+    <td><%=personout.author%></td>
+    </tr>
+    
+  <% end %>
+</table>

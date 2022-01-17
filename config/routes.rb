@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'personasouts/new'
   get 'incpersons/new'
   get 'outtransports/new'
   get 'inctransports/new'
@@ -20,11 +21,13 @@ Rails.application.routes.draw do
   get 'outtransportlist' => 'outtransports#list'
   get 'incpersoncreate' => 'personasincs#new'
   get 'incpersonlist' => 'personasincs#list'
+  get 'outpersoncreate' => 'personasouts#new'
+  get 'outpersonlist' => 'personasouts#list'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'
   delete 'logout'  => 'sessions#destroy'
 
-  resources :users, :inctransports, :tranperms, :outtransports, :personasincs, :presonperms
+  resources :users, :inctransports, :tranperms, :outtransports, :personasincs, :presonperms, :personasouts
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

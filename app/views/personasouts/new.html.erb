@@ -1,0 +1,18 @@
+<% provide(:title, 'Outcoming persons') %>
+<h1>Create new line of outcoming persons </h1>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@personout) do |f| %>
+  
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+  
+  
+        <%= f.label :passport %>
+        <%= f.text_field :passport, class: 'form-control' %>
+  
+  
+        <%= f.submit "Create new line", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>>

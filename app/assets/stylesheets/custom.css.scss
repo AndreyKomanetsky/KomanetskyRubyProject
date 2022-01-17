@@ -129,3 +129,17 @@ input, textarea, select, .uneditable-input {
     border-bottom: 1px solid $gray-lighter;
   }
 }
+
+
+/* tables index */
+
+table {
+  border-collapse: collapse;
+  /*убираем пустые промежутки между ячейками*/
+  border: 1px solid grey;
+  /*устанавливаем для таблицы внешнюю границу серого цвета толщиной 1px*/
+}
+
+th, td {
+  border: 1px solid grey;
+}

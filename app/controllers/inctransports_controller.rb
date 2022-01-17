@@ -7,9 +7,18 @@ class InctransportsController < ApplicationController
     @transportinall = Inctransport.all
   end
   
-  def create
+  def create    
+    @operator = User.find_by(id: session[:user_id]).name
+    if Tranperm.find_by(gozznak: params[:inctransport][:gozznak])
+      @permission = true
+    else
+      @permission = false
+    end
     @transportin = Inctransport.new(transportin_params)
+    
     if @transportin.save
+      @transportin.update_attribute(:author, @operator)
+      @transportin.update_attribute(:permission, true)
       redirect_to action: "list"
     else
       render 'new'
@@ -19,6 +28,7 @@ class InctransportsController < ApplicationController
   private
 
     def transportin_params
+           
       params.require(:inctransport).permit(:mark, :gozznak)
     end
 end

@@ -17,7 +17,13 @@
     <td><%=transportinc.mark%></td>
     <td><%=transportinc.gozznak%></td>
     <td><%= time_tag(transportinc.created_at) %></td>
-    <td><%=transportinc.permission%></td>
+    <td>
+    <% if transportinc.permission? %>
+            <b>'Yes'</b>             
+         <% else %>
+            <b>'No'</b>
+            <% end%>
+    </td>
     <td><%=transportinc.author%></td>
     </tr>
     
